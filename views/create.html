@@ -1,0 +1,33 @@
+{{define "create"}}
+{{template "base"}}
+{{template "header"}}
+	<section class="hero is-primary is-fullheight">
+		<div class="hero-body">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class="column is-5-tablet is-4-desktop is-3-widescreen">
+						<form class="box" method="POST" action="/post/">
+							<div class="field has-text-centered">
+								<h1 class="title has-text-primary">Añadir nota</h1>
+							</div>
+							<label for="note-title" class="label">Titulo de la nota</label>
+							<div class="control">
+								<input class="input is-info is small" for="note-title" type="text" name="title">
+							</div>
+							<label class="label">Nueva tarea</label>
+							<div class="control">
+								<textarea class="textarea is-info" name="body"></textarea>
+							</div>
+							<br />
+							<div class="control has-text-centered">
+								<button class="button is-primary is-outlined" type="submit">Enviar</button>
+								<button class="button is-danger is-outlined" type="reset">Borrar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{{template "footer"}}
+{{end}}

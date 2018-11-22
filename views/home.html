@@ -1,0 +1,36 @@
+{{define "home"}}
+{{template "base" .}}
+{{template "header"}}
+	<section class="hero is-primary is-fullheight">
+		<div class="hero-body">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class="column is-5-tablet is-4-desktop is-3-widescreen">
+						<h2 class="subtitle has-text-centered">Notas</h2>
+					</div>
+				</div>
+				<div class="columns is-centered">
+					<div class="column is-5-tablet is-4-desktop is-3-widescreen">
+						<table class="table is-hoverable is-striped is-fullwidth">
+							<thead>
+								<tr>
+									<th>Nº</th>
+									<th>Nota</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{range $i, $note := .Data}}
+								<tr>
+									<td>{{$i}}</td>
+									<td><a class="link" href="/post/{{$note.Id}}">{{$note.Title}}</a></td>
+								</tr>
+								{{end}}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{{template "footer"}}
+{{end}}
